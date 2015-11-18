@@ -18,10 +18,8 @@ app.get('/',function(req,res){
 	request('http://api.openweathermap.org/data/2.5/forecast/daily?q=corvallis&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
 
 	function get7Day(err, response, body){
-		var parsed = JSON.parse(body);
-		parsed = JSON.parse(parsed);
 		if(!err && response.statusCode < 400){
-			var params = [];
+			/*var params = [];
 			var day = 1;
 			
 			params.push({'daynum':day,'temp':parsed});
@@ -34,7 +32,7 @@ app.get('/',function(req,res){
 					 //'des':body.list[q].weather.description,
 					 //'icon':body.list[q].weather.icon});
 				//day++;
-			//}
+			//}*/
 			
 			context.city = "Corvallis, OR";
 			context.forecast = params;
