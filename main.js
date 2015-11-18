@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 app.get('/',function(req,res){
 	var context = {};
-	request('http://api.openweathermap.org/data/2.5forecast/daily?q=corvallis&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
+	request('http://api.openweathermap.org/data/2.5/forecast/daily?q=corvallis&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
 
 	function get7Day(err, response, body){
 		if(!err && response.statusCode < 400){
