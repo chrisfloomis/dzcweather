@@ -17,10 +17,11 @@ app.get('/',function(req,res){
 	function get7Day(err, response, body){
 		if(!err && response.statusCode < 400){
 			var params = [];
-			//var day = 1;
+			var day = 1;
 			
 			for(q in body.list){
-				params.push({'daynum':(q+1),'temp':body.list[q].temp.day,'hum':body.list[q].humidity,'des':body.list[q].weather.description,'icon':body.list[q].weather.icon});
+				params.push({'daynum':day,'temp':body.list[q].temp.day,'hum':body.list[q].humidity,'des':body.list[q].weather.description,'icon':body.list[q].weather.icon});
+				day++;
 			}
 			
 			context.city = "Corvallis, OR";
