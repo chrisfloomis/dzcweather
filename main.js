@@ -22,9 +22,11 @@ app.get('/',function(req,res){
 			var params = [];
 			var day = 1;
 			
-			for(q in body){
-				params.push(
-					{'daynum': ++day,'temp':body.list.temp.day});
+			params.push({'daynum':day,'temp':body.list.temp.day});
+			
+			//for(q in body.list){
+				//params.push(
+					//{'daynum': ++day,'temp':});
 					 //'temp':body.list[q].temp.day,
 					 //'hum':body.list[q].humidity,
 					 //'des':body.list[q].weather.description,
