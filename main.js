@@ -31,8 +31,8 @@ app.get('/',function(req,res){
 					 //'hum':body.list[q].humidity,
 					 //'des':body.list[q].weather.description,
 					 //'icon':body.list[q].weather.icon});
-				day++;
-			}
+				//day++;
+			//}
 			
 			context.city = "Corvallis, OR";
 			context.forecast = params;
