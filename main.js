@@ -18,11 +18,12 @@ app.get('/',function(req,res){
 	request('http://api.openweathermap.org/data/2.5/forecast/daily?q=corvallis&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
 
 	function get7Day(err, response, body){
+		var response = JSON.parse(req.responseText);
 		if(!err && response.statusCode < 400){
 			var params = [];
 			var day = 1;
 			
-			params.push({'daynum':day,'temp':body.list});
+			params.push({'daynum':day,'temp':response.list.temp.day});
 			
 			//for(q in body.list){
 				//params.push(
