@@ -21,7 +21,7 @@ app.get('/',function(req,res){
 		if(!err && response.statusCode < 400){
 			var foo = JSON.parse(body);
 			var bar = JSON.parse(JSON.stringify(foo.list));
-			//var baz = JSON.parse(bar.temp);
+			var baz = JSON.parse(JSON.stringify(bar.temp));
 			/*var params = [];
 			var day = 1;
 			
@@ -39,7 +39,7 @@ app.get('/',function(req,res){
 			
 			context.city = "Corvallis, OR";
 			//context.forecast = params;
-			context.test = JSON.stringify(bar.temp);
+			context.test = JSON.stringify(baz.day);
 			res.render('7Day',context);
 		}
 		else{
