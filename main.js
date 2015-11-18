@@ -23,7 +23,7 @@ app.get('/',function(req,res){
 			var params = [];
 			var day = 1;
 			
-			params.push({'daynum':day,'temp':parsedbody.list});
+			params.push({'daynum':day,'temp':parsedbody.list[1]});
 			
 			//for(q in body.list){
 				//params.push(
