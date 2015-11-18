@@ -19,9 +19,9 @@ app.get('/',function(req,res){
 			var params = [];
 			var day = 1;
 			
-			for(q in body.list){
+			for(q in body){
 				params.push(
-					{'daynum':day,
+					{'daynum':q,
 					 'temp':body.list[q].temp.day,
 					 'hum':body.list[q].humidity,
 					 'des':body.list[q].weather.description,
