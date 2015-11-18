@@ -20,9 +20,11 @@ app.get('/',function(req,res){
 			//var day = 1;
 			
 			for(q in body.list){
-				params.push({'daynum':(q+1),'temp':body.list[q].temp.day,'hum':body.list[q].humidity,'des':body.list[q].weather.description,'icon':body.list[q].weather.icon})
+				params.push({'daynum':(q+1),'temp':body.list[q].temp.day,'hum':body.list[q].humidity,'des':body.list[q].weather.description,'icon':body.list[q].weather.icon});
 			}
 			
+			context.city = "Corvallis, OR";
+			context.forecast = params;
 			res.render('7Day');
 		}
 		else{
