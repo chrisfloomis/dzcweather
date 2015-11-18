@@ -19,7 +19,7 @@ app.get('/',function(req,res){
 
 	function get7Day(err, response, body){
 		if(!err && response.statusCode < 400){
-			var foo = JSON.parse(body);
+			//var foo = JSON.parse(body);
 			/*var params = [];
 			var day = 1;
 			
