@@ -27,13 +27,13 @@ app.get('/',function(req,res){
 			
 			//params.push({'daynum':day,'temp':parsed});
 			
-			for(q in body.list){
+			for(q in foo.list){
 				params.push(
-					{//'daynum': (q+1),
-					 'temp':foo.list[q].temp.day,
-					 'hum':foo.list[q].humidity,
-					 'des':foo.list[q].weather.description,
-					 'icon':foo.list[q].weather.icon});
+					{'daynum': ++day,
+					 'temp':JSON.stringify(foo.list[q].temp.day),
+					 'hum':JSON.stringify(foo.list[q].humidity),
+					 'des':JSON.stringify(foo.list[q].weather.description),
+					 'icon':JSON.stringify(foo.list[q].weather.icon)});
 				day++;
 			}
 			
