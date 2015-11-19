@@ -30,10 +30,10 @@ app.get('/',function(req,res){
 			for(q in body.list){
 				params.push(
 					{'daynum': ++day,
-					 'temp':JSON.stringify(foo.list[q].temp.day),
-					 'hum':JSON.stringify(foo.list[q].humidity),
-					 'des':JSON.stringify(foo.list[q].weather.description),
-					 'icon':JSON.stringify(foo.list[q].weather.icon)});
+					 'temp':foo.list[q].temp.day,
+					 'hum':foo.list[q].humidity,
+					 'des':foo.list[q].weather.description,
+					 'icon':foo.list[q].weather.icon});
 				day++;
 			}
 			
