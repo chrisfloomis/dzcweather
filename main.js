@@ -39,7 +39,7 @@ app.get('/',function(req,res){
 			
 			context.city = "Corvallis, OR";
 			//context.forecast = params;
-			context.test = JSON.stringify(foo.list[0]);
+			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
 		}
 		else{
