@@ -29,7 +29,7 @@ app.get('/',function(req,res){
 			
 			for(q in body.list){
 				params.push(
-					{'daynum': ++day,
+					{'daynum': (q+1),
 					 'temp':foo.list[q].temp.day,
 					 'hum':foo.list[q].humidity,
 					 'des':foo.list[q].weather.description,
