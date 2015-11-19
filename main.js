@@ -23,18 +23,16 @@ app.get('/',function(req,res){
 			//var bar = JSON.parse(JSON.stringify(foo.list));
 			//var baz = JSON.parse(JSON.stringify(bar.temp));
 			var params = [];
-			var day = 1;
 			
 			//params.push({'daynum':day,'temp':parsed});
 			
 			for(q in foo.list){
 				params.push(
-					{'daynum': ++day,
+					{'daynum': (q+1),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
 					 'des':JSON.stringify(foo.list[q].weather.description),
 					 'icon':JSON.stringify(foo.list[q].weather.icon)});
-				day++;
 			}
 			
 			context.city = "Corvallis, OR";
