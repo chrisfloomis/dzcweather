@@ -22,23 +22,23 @@ app.get('/',function(req,res){
 			var foo = JSON.parse(body);
 			//var bar = JSON.parse(JSON.stringify(foo.list));
 			//var baz = JSON.parse(JSON.stringify(bar.temp));
-			/*var params = [];
+			var params = [];
 			var day = 1;
 			
 			params.push({'daynum':day,'temp':parsed});
 			
-			//for(q in body.list){
-				//params.push(
-					//{'daynum': ++day,'temp':});
-					 //'temp':body.list[q].temp.day,
-					 //'hum':body.list[q].humidity,
-					 //'des':body.list[q].weather.description,
-					 //'icon':body.list[q].weather.icon});
-				//day++;
-			//}*/
+			for(q in body.list){
+				params.push(
+					{'daynum': ++day,
+					 'temp':JSON.stringify(foo.list[q].temp.day),
+					 'hum':JSON.stringify(foo.list[q].humidity),
+					 'des':JSON.stringify(foo.list[q].weather.description),
+					 'icon':JSON.stringify(foo.list[q].weather.icon)});
+				day++;
+			}
 			
 			context.city = "Corvallis, OR";
-			//context.forecast = params;
+			context.forecast = params;
 			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
 		}
