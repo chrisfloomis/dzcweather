@@ -36,7 +36,7 @@ app.get('/',function(req,res){
 					 'icon':JSON.stringify(foo.list[q].weather[0].icon)});
 			}
 			
-			context.city = "Oakland, CA";
+			context.city = JSON.stringify(foo.city.name);
 			context.forecast = params;
 			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
