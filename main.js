@@ -28,7 +28,7 @@ app.get('/',function(req,res){
 			var day = 1;
 			
 			for(q in foo.list){
-				var tempicon = JSON.stringify(foo.list[q].weather[0].icon;
+				var tempicon = JSON.stringify(foo.list[q].weather[0].icon);
 				
 				params.push(
 					{'daynum': (day++),
