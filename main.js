@@ -28,17 +28,15 @@ app.get('/',function(req,res){
 			var day = 1;
 			
 			for(q in foo.list){
-				var tempicon = JSON.stringify(foo.list[q].weather[0].icon);
-				
 				params.push(
 					{'daynum': (day++),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
-					 'des':JSON.stringify(foo.list[q].weather[0].description),
-					 'icon':tempicon.replace(/\"/g, "")});
+					 'des':(JSON.stringify(foo.list[q].weather[0].description)).replace(/\"/g, ""),
+					 'icon':(JSON.stringify(foo.list[q].weather[0].icon)).replace(/\"/g, "")});
 			}
 			
-			context.city = (JSON.stringify(foo.city.name)).replace(/\"/g, "");
+			context.city = (JSON.stringify(foo.city.name)).replace(/\"/g, "")+", "+(JSON.stringify(foo.country)).replace(/\"/g, "");
 			context.forecast = params;
 			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
