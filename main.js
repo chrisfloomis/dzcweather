@@ -36,9 +36,9 @@ app.get('/',function(req,res){
 					 'icon':(JSON.stringify(foo.list[q].weather[0].icon)).replace(/\"/g, "")});
 			}
 			
-			context.city = JSON.stringify(foo.city.name)+", "+JSON.stringify(foo.country);
+			context.city = (JSON.stringify(foo.city.name)+", "+JSON.stringify(foo.city.country)).replace(/\"/g, "");
 			context.forecast = params;
-			context.test = JSON.stringify(foo.list[0].temp.day);
+			//context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
 		}
 		else{
