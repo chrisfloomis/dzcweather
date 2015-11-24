@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 app.get('/',function(req,res){
 	var context = {};
-	request('http://api.openweathermap.org/data/2.5/forecast/daily?q=corvallis&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
+	request('http://api.openweathermap.org/data/2.5/forecast/daily?q=oakland&units=imperial&cnt=7&APPID=ac8c02ef8cf7667fb84c8c8dc20ec383', get7Day);
 
 	function get7Day(err, response, body){
 		if(!err && response.statusCode < 400){
@@ -32,11 +32,11 @@ app.get('/',function(req,res){
 					{'daynum': (day++),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
-					 'des':JSON.stringify(foo.list[q].weather.description),
-					 'icon':JSON.stringify(foo.list[q].weather.icon)});
+					 'des':JSON.stringify(foo.list[q].weather[0].description),
+					 'icon':JSON.stringify(foo.list[q].weather[0].icon)});
 			}
 			
-			context.city = "Corvallis, OR";
+			context.city = "Oakland, CA";
 			context.forecast = params;
 			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
