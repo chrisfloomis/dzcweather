@@ -28,12 +28,14 @@ app.get('/',function(req,res){
 			var day = 1;
 			
 			for(q in foo.list){
+				var tempicon = JSON.stringify(foo.list[q].weather[0].icon;
+				
 				params.push(
 					{'daynum': (day++),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
 					 'des':JSON.stringify(foo.list[q].weather[0].description),
-					 'icon':JSON.stringify(foo.list[q].weather[0].icon)});
+					 'icon':tempicon.replace(/\"/g, "")});
 			}
 			
 			context.city = JSON.stringify(foo.city.name);
