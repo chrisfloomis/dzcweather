@@ -38,7 +38,7 @@ app.get('/',function(req,res){
 					 'icon':tempicon.replace(/\"/g, "")});
 			}
 			
-			context.city = JSON.stringify(foo.city.name);
+			context.city = (JSON.stringify(foo.city.name)).replace(/\"/g, "");
 			context.forecast = params;
 			context.test = JSON.stringify(foo.list[0].temp.day);
 			res.render('7Day',context);
