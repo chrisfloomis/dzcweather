@@ -32,8 +32,8 @@ app.get('/',function(req,res){
 					{'daynum': day.getDate(),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
-					 'des':(JSON.stringify(foo.list[q].weather[0].description)).replace(/\"/g, ""),
-					 'icon':(JSON.stringify(foo.list[q].weather[0].icon)).replace(/\"/g, "")});
+					 'des':foo.list[q].weather[0].description,
+					 'icon':foo.list[q].weather[0].icon});
 			}
 			
 			context.city = (JSON.stringify(foo.city.name)+", "+JSON.stringify(foo.city.country)).replace(/\"/g, "");
