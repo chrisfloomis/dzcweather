@@ -29,11 +29,12 @@ app.get('/',function(req,res){
 			
 			for(q in foo.list){
 				params.push(
-					{'daynum': day.getMonth()+"-"+day.getDate(),
+					{'daynum': day.getMonth()+1+"-"+day.getDate(),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
 					 'des':foo.list[q].weather[0].description,
 					 'icon':foo.list[q].weather[0].icon});
+				day.setDate(day.getDate()+1);
 			}
 			
 			context.city = (JSON.stringify(foo.city.name)+", "+JSON.stringify(foo.city.country)).replace(/\"/g, "");
