@@ -29,7 +29,7 @@ app.get('/',function(req,res){
 			
 			for(q in foo.list){
 				params.push(
-					{'daynum': (foo.list[q].dt).getDate(),
+					{'daynum': foo.list[q].dt.getDate(),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
 					 'des':(JSON.stringify(foo.list[q].weather[0].description)).replace(/\"/g, ""),
