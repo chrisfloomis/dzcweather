@@ -25,11 +25,11 @@ app.get('/',function(req,res){
 			var params = [];
 			
 			//params.push({'daynum':day,'temp':parsed});
-			var day = 1;
+			var day = new Date();//1;
 			
 			for(q in foo.list){
 				params.push(
-					{'daynum': (day++),
+					{'daynum': (day.setDate(day.getDate())),
 					 'temp':JSON.stringify(foo.list[q].temp.day),
 					 'hum':JSON.stringify(foo.list[q].humidity),
 					 'des':(JSON.stringify(foo.list[q].weather[0].description)).replace(/\"/g, ""),
